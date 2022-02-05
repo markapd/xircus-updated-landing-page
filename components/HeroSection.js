@@ -1,4 +1,5 @@
 import { Box, Container, Image, VStack, Heading, Text, Button, HStack } from '@chakra-ui/react'
+import { useTranslations } from 'next-intl';
 import { GiPlayButton } from "react-icons/gi";
 
 // imports style
@@ -15,24 +16,25 @@ const brandLogo = [
   'https://upload.wikimedia.org/wikipedia/en/d/d6/Digital-Journal-Logo.png'
 ]
 export const HeroSection = () => {
+  const herosection = useTranslations('HeroSection')
   return (
     <Box {...heroBoxStyle}>
       <Container {...heroContainerStyle}>
         <VStack spacing={30}>
           <Image {...heroLogoStyle} src="https://icoholder.com/files/img/6f7203a158209cb2e9143d6631cbb7c2.png" />
-          <Heading {...typoStyle.subheadline.hero}> XIRCUS </Heading>
-          <Heading {...typoStyle.subheadline.hero}> Start your NFT business today! </Heading>
-          <Text {...typoStyle.text.hero}> Deploy your customizable NFT marketplace in minutes<br />bundled with awesome features </Text>
+          <Heading {...typoStyle.subheadline.hero}> {herosection('heroHeadline')} </Heading>
+          <Heading {...typoStyle.subheadline.hero}> {herosection('heroHeadline2')} </Heading>
+          <Text {...typoStyle.text.hero}> {herosection('heroSubHeadline')} </Text>
           <Button {...heroPlayButton}><GiPlayButton /></Button>
           <HStack {...heroButton}>
-            <Button {...typoStyle.text.hero} {...heroGradientButton}> Doploy Marketplace </Button>
-            <Button {...typoStyle.text.hero} {...heroGradientButton}> Get XircusPunks for<br/> Early Access </Button>
+            <Button {...typoStyle.text.hero} {...heroGradientButton}> {herosection('firstButton')} </Button>
+            <Button {...typoStyle.text.hero} {...heroGradientButton}> {herosection('secondButton')} </Button>
           </HStack>
         </VStack>
       </Container>
       <Container {...asSeenImageContainerStyle}>
         <HStack {...heroAsSeenStyle}>
-            <Box {...asSeenBoxImage}> As Seen On</Box>
+            <Box {...asSeenBoxImage}>{herosection('asSeen')} </Box>
             {
               brandLogo.map((e,i) => (
               <Box key={i} {...asSeenBoxImage}>

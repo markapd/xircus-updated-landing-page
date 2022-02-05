@@ -1,4 +1,5 @@
 import { Box, Container, VStack, Heading, Text, Image, HStack, Grid, Avatar, Center} from '@chakra-ui/react';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 //imports style
@@ -6,52 +7,51 @@ import { earnGridStyle, typoStyle, earnContainerStyle, earnBoxStyle, earnAvatarS
 
 const data = [
   {
-    title: 'As DAO',
-    text: 'Get early access on products, VIP lounge newslatters early oppurtunities, Discounts and membership rewards'
+    title: 'firstBoxHead',
+    text: 'firstBoxText'
   },
   {
-    title: 'As Creator',
-    text: 'Mint your NFTs as 1$ for the listing storage fee and 2.5% transaction fee for every purchase '
+    title: 'secondBoxHead',
+    text: 'secondtBoxText'
   },  
   {
-    title: 'As Collector',
-    text: 'Collect from different marketpalce and manages collectibles via Xircus Mobile and Xircus TV apps'
+    title: 'thirdBoxHead',
+    text: 'thirdBoxText'
   },
   {
-    title: 'As Marketplace Owner',
-    text: 'Deploy your NFT marketpalce, costunize your fees and themes, create staking oppurtunities for your customers'
+    title: 'fourthBoxHead',
+    text: 'fourthBoxText'
   },
   {
-    title: 'As Provider',
-    text: 'Earn from deploying APIs to cached data for marketplaces'
+    title: 'fifthBoxHead',
+    text: 'fifthBoxText'
   },
   {
-    title: 'As Ambassador',
-    text: 'Earn from helping creators mint their creation their creation'
+    title: 'sixthBoxHead',
+    text: 'sixthBoxText'
   },
 ]
 
-const UserCard = ({ title, text }) => (
+const UserCard = ({ title, text , earnsection}) => (
   <HStack>
     <Image src="http://placehold.it/100x100" {...earnAvatarStyle} />
     <Box>
-      <Heading {...typoStyle.title.earn}>{title}</Heading>
-      <Text  {...typoStyle.text.earn}>{text}</Text>
+      <Heading {...typoStyle.title.earn}>{earnsection(title)}</Heading>
+      <Text  {...typoStyle.text.earn}>{earnsection(text)}</Text>
     </Box>
   </HStack>
 )
 
-
-
 export const EarnSection = ({ items = data }) => {
+  const earnsection = useTranslations('EarnSection')
   return (
     <Box {...earnBoxStyle}>
       <Container {...earnContainerStyle}>
-            <Heading {...typoStyle.subheadline.earn}> How To Earn? </Heading>
-            <Text {...typoStyle.subtext.earn}> Unleash the power of decentralized NFT marketplace </Text>
+            <Heading {...typoStyle.subheadline.earn}> {earnsection('earnHeadLine')}</Heading>
+            <Text {...typoStyle.subtext.earn}> {earnsection('earnSubHeadline')}</Text>
           <Grid {...earnGridStyle}>
             {
-              items.map((user, userKey) => <UserCard key={`user-${userKey}`} {...user} />)
+              items.map((user, userKey) => <UserCard key={`user-${userKey}`} earnsection={earnsection} {...user} />)
             }
           </Grid>
       </Container>

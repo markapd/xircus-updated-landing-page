@@ -3,24 +3,26 @@ import { Box, Tabs, TabList,Tab,TabPanels,TabPanel, Container,Image } from '@cha
 
 //imports style
 import { easyStepsContainerStyle,easyStepsTabStyle,easyTabStyle,boxTabsStyle, easyImageStyle } from '../styles/global'
+import { useTranslations } from 'next-intl';
 
 
 const tabItem = [
   {
-    tabs: 'Deploy a Marketplace',
+    tabs: 'easyFirstTab',
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgxCiaGefaSbHuWihbK04_aD4c6CETLqL4Wg&usqp=CAU'
   },
   {
-    tabs: 'Deploy a Collection',
+    tabs: 'easySecondTab',
     img: 'https://static.vecteezy.com/system/resources/previews/004/727/152/original/illustration-of-a-non-fungible-token-nft-background-for-infographics-digital-technology-concept-crypto-art-futuristic-neon-wallpaper-with-typography-vector.jpg'
   },
   {
-    tabs: 'Deploy a Min on NFT',
+    tabs: 'easyThirdTab',
     img: 'https://c8.alamy.com/comp/2F5B995/nft-non-fungible-token-crypto-art-vector-illustration-for-banner-abstract-digital-background-of-nft-cryptoart-and-gaming-using-blockchain-technology-2F5B995.jpg'
   },
 ]
 
 export const EasyStepsSection = () => {
+  const easyStepsSection = useTranslations('EasyStepsSection')
   return (
     <Box>
       <Container {...easyStepsContainerStyle}>
@@ -30,7 +32,7 @@ export const EasyStepsSection = () => {
             tabItem.map((e,i) => (
               <Tab key={`second-${i}`} {...easyStepsTabStyle} >
                 <Box {...boxTabsStyle}>
-                  {e.tabs}
+                  {easyStepsSection(e.tabs)}
                 </Box>
               </Tab>
             ))

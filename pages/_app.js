@@ -1,11 +1,14 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../styles/theme'
+import {NextIntlProvider} from 'next-intl';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
-    </ChakraProvider>
+    <NextIntlProvider messages={pageProps.messages}>
+      <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+      </ChakraProvider>
+    </NextIntlProvider>
   )
 }
 

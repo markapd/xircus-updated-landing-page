@@ -39,11 +39,10 @@ export default function Home() {
   )
 }
 
-// export async function getStaticProps({locale}) {
-//   console.log(locale)
-//   return {
-//     props: {
-//       messages: (await import(`../../messages/${locale}.json`)).default
-//     }
-//   };
-// }
+export async function getStaticProps({locale}) {
+  return {
+    props: {
+      messages: (await import(`../i18n/${locale}.json`)).default
+    }
+  };
+}

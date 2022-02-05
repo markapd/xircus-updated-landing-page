@@ -7,35 +7,37 @@ import { AiFillLinkedin } from "react-icons/ai";
 
 //import styles 
 import { footerBoxStyle, typoStyle,footerStackStyle, footerNavStyle,footerContainerStyle } from '../styles/global'
+import { useTranslations } from 'next-intl';
 
 const footerNav = [
   {
     path:'#',
-    label: 'Blog'
+    label: 'blog'
   },
   {
     path:'#',
-    label: 'Resources'
+    label: 'resources'
   },
   {
     path:'#',
-    label: 'Terms and Condition'
+    label: 'terms'
   },
   {
     path:'#',
-    label: 'Privacy'
+    label: 'privacy'
   },
   {
     path:'#',
-    label: 'Contact Us'
+    label: 'contact'
   },
 ]
 export const Footer = () => {
+const footer = useTranslations('Footer')
   return (
     <Box {...footerBoxStyle}>
       <Container {...footerContainerStyle}>
         <HStack {...footerStackStyle}>
-        <Text {...typoStyle.text.footer}> All Rights Reserved 2021 | Xircus Pte. Ltd </Text>
+        <Text {...typoStyle.text.footer}> {footer('footerRights')} </Text>
         <Spacer />
           <HStack>
               <FaTelegramPlane />
@@ -50,7 +52,7 @@ export const Footer = () => {
           <List {...footerNavStyle}>
             {
               footerNav.map((e,i)=> (
-                <ListItem key={i} {...typoStyle.text.footer}>{e.label}</ListItem>
+                <ListItem key={i} {...typoStyle.text.footer}>{footer(e.label)}</ListItem>
               ))
             }
           </List>

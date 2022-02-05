@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Text, Grid, Avatar, Stack, VStack, Center } from '@chakra-ui/react';
+import { useTranslations } from 'next-intl';
 
 //import style
 import { multipleGridStyle, typoStyle, multipleContainerStyle, multipleBoxStyle } from '../styles/global'
@@ -7,87 +8,88 @@ import { multipleGridStyle, typoStyle, multipleContainerStyle, multipleBoxStyle 
 const listIcons = [
   {
     icon: '',
-    label: 'BSC'
+    label: 'firstAvatar'
   },
   {
     icon: '',
-    label: 'POLIGON'
+    label: 'secondAvatar'
   },
   {
     icon: '',
-    label: 'FANTOM'
+    label: 'thirdAvatar'
   },
   {
     icon: '',
-    label: 'ETHERIUM'
+    label: 'fourthAvatar'
   },
   {
     icon: '',
-    label: 'MOONBEAM'
+    label: 'fifthAvatar'
   },
   {
     icon: '',
-    label: 'MOONDRIVER'
+    label: 'sixthAvatar'
   },
   {
     icon: '',
-    label: 'AVALANCHE'
+    label: 'seventhAvatar'
   },
   {
     icon: '',
-    label: 'CELO'
+    label: 'eightAvatar'
   },
   {
     icon: '',
-    label: 'POA'
+    label: 'ninthAvatar'
   },
   {
     icon: '',
-    label: 'XDAI'
+    label: 'tenthAvatar'
   },
   {
     icon: '',
-    label: 'HECO'
+    label: 'elevenAvatar'
   },
   {
     icon: '',
-    label: 'ARBITRUM'
+    label: 'twelveAvatar'
   },
   {
     icon: '',
-    label: 'OPTIMISM'
+    label: 'thirteenAvatar'
   },
   {
     icon: '',
-    label: 'FUSE'
+    label: 'fourteenAvatar'
   },
   {
     icon: '',
-    label: 'AURORA'
+    label: 'fifteenAvatar'
   },
   {
     icon: '',
-    label: 'SOLANA'
+    label: 'sixtheenAvatar'
   },
   {
     icon: '',
-    label: 'FLOW'
-  },
+    label: 'seventeentAvatar'
+  },  
   {
     icon: '',
-    label: 'NEAR'
+    label: 'eighteenAvatar'
   }
 ]
 
 
-const GridListItems = ({icon, label}) => (
+const GridListItems = ({icon, label, multipleSection}) => (
   <VStack>
      <Avatar name='Kola Tioluwani' src='https://bit.ly/tioluwani-kolawole' />
-    <Text {...typoStyle.text.multiple}>{label}</Text>
+    <Text {...typoStyle.text.multiple}>{multipleSection(label)}</Text>
   </VStack>
 )
 
 export const MultipleSection = () => {  
+  const multipleSection = useTranslations('MultipleSection')
   return (
     <Box {...multipleBoxStyle}>
       <Container {...multipleContainerStyle}>
@@ -96,7 +98,7 @@ export const MultipleSection = () => {
         <Grid {...multipleGridStyle}>
           {
             listIcons.map((e,i) => (
-              <GridListItems key={i} {...e} />
+              <GridListItems key={i} multipleSection={multipleSection} {...e} />
             ))
           }
         </Grid>

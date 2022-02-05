@@ -34,15 +34,12 @@ export const HeroSection = () => {
         <HStack {...heroAsSeenStyle}>
             <Box {...asSeenBoxImage}> As Seen On</Box>
             {
-              brandLogo.map(e => (
-              <Box {...asSeenBoxImage}>
+              brandLogo.map((e,i) => (
+              <Box key={i} {...asSeenBoxImage}>
                 <Image {...asSeenImageStyle} src={e} />
               </Box>
               ))
-            }
-            
-           
-           
+            }  
         </HStack>
         </Container>
     </Box>

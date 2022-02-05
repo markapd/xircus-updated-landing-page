@@ -2,7 +2,7 @@ import { Box, Container, VStack, Heading, Text, Image, HStack, Grid, Avatar, Cen
 import React from 'react';
 
 //imports style
-import { earnGridStyle, typoStyle } from '../styles/global'
+import { earnGridStyle, typoStyle, earnContainerStyle, earnBoxStyle, earnAvatarStyle } from '../styles/global'
 
 const data = [
   {
@@ -32,8 +32,8 @@ const data = [
 ]
 
 const UserCard = ({ title, text }) => (
-  <HStack mx="auto">
-    <Image src="http://placehold.it/100x100" rounded="5px" w={50} h={50} />
+  <HStack>
+    <Image src="http://placehold.it/100x100" {...earnAvatarStyle} />
     <Box>
       <Heading {...typoStyle.title.earn}>{title}</Heading>
       <Text  {...typoStyle.text.earn}>{text}</Text>
@@ -45,8 +45,8 @@ const UserCard = ({ title, text }) => (
 
 export const EarnSection = ({ items = data }) => {
   return (
-    <Box mt="80px">
-      <Container maxW="container.lg">
+    <Box {...earnBoxStyle}>
+      <Container {...earnContainerStyle}>
             <Heading {...typoStyle.subheadline.earn}> How To Earn? </Heading>
             <Text {...typoStyle.subtext.earn}> Unleash the power of decentralized NFT marketplace </Text>
           <Grid {...earnGridStyle}>

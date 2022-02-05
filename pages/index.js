@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
 import { Box } from '@chakra-ui/react'
 
+//Next import
+
+//Import Styele hehe
 import { webBackgroundStyle } from '../styles/global'
 
 //Components
@@ -37,3 +38,12 @@ export default function Home() {
     </Box>      
   )
 }
+
+// export async function getStaticProps({locale}) {
+//   console.log(locale)
+//   return {
+//     props: {
+//       messages: (await import(`../../messages/${locale}.json`)).default
+//     }
+//   };
+// }

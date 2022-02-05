@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Tabs, TabList,Tab,TabPanels,TabPanel, Container,Image } from '@chakra-ui/react'
 
 //imports style
-import { easyStepsContainerStyle,easyStepsTabStyle,easyTabStyle,boxTabsStyle } from '../styles/global'
+import { easyStepsContainerStyle,easyStepsTabStyle,easyTabStyle,boxTabsStyle, easyImageStyle } from '../styles/global'
 
 
 const tabItem = [
@@ -27,8 +27,8 @@ export const EasyStepsSection = () => {
        <Tabs>
         <TabList>
           {
-            tabItem.map(e => (
-              <Tab {...easyStepsTabStyle} >
+            tabItem.map((e,i) => (
+              <Tab key={`second-${i}`} {...easyStepsTabStyle} >
                 <Box {...boxTabsStyle}>
                   {e.tabs}
                 </Box>
@@ -38,9 +38,9 @@ export const EasyStepsSection = () => {
         </TabList>
         <TabPanels >
         {
-          tabItem.map(e => (
-            <TabPanel m="auto 0px">
-              <Image w="full" src={e.img} />
+          tabItem.map((e,i) => (
+            <TabPanel key={`first-${i}`} {...easyTabStyle}>
+              <Image {...easyImageStyle} src={e.img} />
             </TabPanel>
           ))
         }

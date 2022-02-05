@@ -31,8 +31,8 @@ export const NftControl = () => {
         </VStack>
         <HStack {...nftCardContainer}>
           {
-            itemCardList.map(e => (
-              <Box {...nftBoxStyle.parentBox}>
+            itemCardList.map((e,i) => (
+              <Box key={i} {...nftBoxStyle.parentBox}>
                 <Box {...nftBoxStyle}>
                   <Image {...nftCardImageStyle} src={e.img} />
                   <Text {...typoStyle.text.nftControl}>{e.text}</Text>

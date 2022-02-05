@@ -2,7 +2,7 @@ import { Box, Container, Heading, ListItem,List, Image, Text } from '@chakra-ui/
 
 
 //import style
-import { carouselContainerStyle,carouselCardStyle,carouselImageStyle, carouselStyle, typoStyle, carouselBoxStyle } from '../styles/global'
+import { carouselListStyle,carouselContainerStyle,carouselCardStyle,carouselImageStyle, carouselStyle, typoStyle, carouselBoxStyle } from '../styles/global'
 
 //import carousel
 import Carousel from 'react-elastic-carousel'
@@ -42,11 +42,11 @@ export const CarouselSection = () => {
     <Box {...carouselBoxStyle}>
       <Container {...carouselContainerStyle}>
         <Heading {...typoStyle.title.carousel} > Built-In and Add-On Features </Heading>
-        <List display="flex"> 
+        <List {...carouselListStyle}> 
           <Carousel {...carouselStyle} >
             {
-              carouselItems.map(e => (
-                  <CarouselCard {...e} />
+              carouselItems.map((e,i)=> (
+                  <CarouselCard key={i} {...e} />
               ))
             }
           </Carousel>

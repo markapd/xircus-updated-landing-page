@@ -65,15 +65,15 @@ const DrawerExample = () => {
           <DrawerBody>
           <List  >
               { 
-                navItem.map(e => (
-                  <ListItem {...typoStyle.text.header} {...navItemStyle}>{e.label}</ListItem>
+                navItem.map((e,i) => (
+                  <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{e.label}</ListItem>
                 ))
               }
             </List>
             <Select {...typoStyle.text.header} >
             {
-              language.map(e => (
-                <option value='option1'>{e.label}</option>
+              language.map((e,i)=> (
+                <option key={i} value='option1'>{e.label}</option>
               ))
             }
             </Select>
@@ -96,15 +96,15 @@ export const Header = () => {
           <DrawerExample />
             <List {...navListStyle} >
               { 
-                navItem.map(e => (
-                  <ListItem {...typoStyle.text.header} {...navItemStyle}>{e.label}</ListItem>
+                navItem.map((e,i) => (
+                  <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{e.label}</ListItem>
                 ))
               }
             </List>
           <Select  {...typoStyle.text.header} {...selectStyle}>
             {
-              language.map(e => (
-                <option value={e.country}>{e.label}</option>
+              language.map((e,i) => (
+                <option key={i} value={e.country}>{e.label}</option>
               ))
             }
         </Select>

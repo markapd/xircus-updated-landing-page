@@ -46,18 +46,18 @@ export const DeploySection = () => {
         <Tabs {...deployTabs} >
           <TabList i >
             {
-              tabList.map(e => (
-                <Tab {...deployTabButton}>
-                  <Box {...tabBoxStyle}>{e.tabs}</Box>
+              tabList.map((e,i) => (
+                <Tab  {...deployTabButton}>
+                  <Box key={`first-${i}`} {...tabBoxStyle}>{e.tabs}</Box>
                 </Tab>
               ))
             }
           </TabList>
           <TabPanels>
             {
-              tabList.map(e => (
-                <TabPanel>
-                  <Image {...deployImageStyle} src={e.img} />
+              tabList.map((e,i)=> (
+                <TabPanel >
+                  <Image key={`second-${i}`} {...deployImageStyle} src={e.img} />
                 </TabPanel>
               ))
             }

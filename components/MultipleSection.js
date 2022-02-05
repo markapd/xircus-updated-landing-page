@@ -1,7 +1,7 @@
 import { Box, Container, Heading, Text, Grid, Avatar, Stack, VStack, Center } from '@chakra-ui/react';
 
 //import style
-import { multipleGridStyle } from '../styles/global'
+import { multipleGridStyle, typoStyle, multipleContainerStyle, multipleBoxStyle } from '../styles/global'
 
 
 const listIcons = [
@@ -83,20 +83,20 @@ const listIcons = [
 const GridListItems = ({icon, label}) => (
   <VStack>
      <Avatar name='Kola Tioluwani' src='https://bit.ly/tioluwani-kolawole' />
-    <Text fontSize="sm">{label}</Text>
+    <Text {...typoStyle.text.multiple}>{label}</Text>
   </VStack>
 )
 
-export const MultipleSection = () => {
+export const MultipleSection = () => {  
   return (
-    <Box my="100px">
-      <Container maxW="container.lg">
-          <Heading textAlign="center" mb="20px"> Multiple Blockchain Support </Heading>
-          <Text textAlign="center" mb="60px"> Xircus supports multi-chain deployment for multiple blockchain selection </Text>
+    <Box {...multipleBoxStyle}>
+      <Container {...multipleContainerStyle}>
+          <Heading {...typoStyle.subheadline.multiple}> Multiple Blockchain Support </Heading>
+          <Text {...typoStyle.text.multiple}> Xircus supports multi-chain deployment for multiple blockchain selection </Text>
         <Grid {...multipleGridStyle}>
           {
-            listIcons.map(e => (
-              <GridListItems {...e} />
+            listIcons.map((e,i) => (
+              <GridListItems key={i} {...e} />
             ))
           }
         </Grid>

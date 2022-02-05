@@ -10,7 +10,6 @@ export const typoStyle = {
       fontSize: '30px',
       my:'20px'
     },
-
   },
   subheadline:{
     hero: {
@@ -20,8 +19,17 @@ export const typoStyle = {
     earn: {
       textAlign:'center',
       fontSize: '30px'
+    },
+    income: {
+      size:'sm',
+      color:'orange.500',
+      fontWeight:'bold'
+    },
+    multiple: {
+      textAlign:'center',
+      mb:'20px'
     }
-  },
+  },  
   title:{
     carousel:{
       fontSize: '30px',
@@ -46,7 +54,8 @@ export const typoStyle = {
   },
   subtitle:{
     income: {
-      fontSize:'14px'
+      fontSize:'14px',
+      py:'20px'
     }
   },
   text:{
@@ -77,6 +86,11 @@ export const typoStyle = {
       fontSize:'10px'
     },
     nft: {
+      fontSize:'12px'
+    },
+    multiple: {
+      textAlign:'center',
+      mb:'60px',
       fontSize:'12px'
     }
   },
@@ -116,13 +130,10 @@ export const logoStyle = {
 export const navListStyle = {
    display:{ base:'none', lg:'flex' }
 }
-
 export const navItemStyle = {
   px:'20px',
   cursor:'pointer',
-
 }
-
 export const selectStyle = {
   w:"100px",
   rounded: 30,
@@ -133,12 +144,11 @@ export const selectStyle = {
   }
 }
 
-
 //-------------Hero Section----------//
+
 export const heroContainerStyle = {
   maxW:'container.lg'
 }
-
 export const headerDrawerStyle = {
   display:{base:'block', lg:'none'},
   bg:'transparent',
@@ -149,25 +159,19 @@ export const headerDrawerStyle = {
     bg:'none',
     boxShadow: 'none'
   },
-
 }
-
 export const heroButton = {
   flexDirection: {base: 'column', lg: 'row'},
 }
-export const heroTextStyle = {
-  
-}
+export const heroTextStyle = {}
 export const heroLogoStyle = {
   boxSize:'50px',
   objectFit:'cover'
 }
-
 export const heroBoxStyle = {
   py:'60px',
   mt:'50px'
 }
-
 export const heroPlayButton = {
   rounded: '100%',
   h:'50px',
@@ -180,11 +184,9 @@ export const heroPlayButton = {
     boxShadow:'none'
   }
 }
-
 export const heroAsSeenStyle = {
   flexDirection: { base:'column', lg:'row'},
   }
-
 export const heroGradientButton = {
   color:'white',
   transition:'all 300ms ease',
@@ -198,7 +200,6 @@ export const heroGradientButton = {
    },
   _hover:{ bg: '#111', bgGradient: 'linear(to-l, #8a2387, #e94057, #f27121)' }
 }
-
 export const asSeenImageContainerStyle = {
   maxW:'container.lg',
   mt:'100px'
@@ -207,18 +208,15 @@ export const asSeenImageStyle = {
   boxSize:'100px',
   h:'40px'
 }
-
 export const asSeenBoxImage= {
   w:{base:'auto',lg:'100%'},
   py:{ base:'20px',lg:'auto' },
 }
 
 
-//--------- NFT CONTROL COMPONENTS ----------//
-export const nftControlBoxStyle = {
-  //
-}
+//--------- NFT CONTROL COMPONENTS ----------//  
 
+export const nftControlBoxStyle = {}
 export const nftControlContainerStyle = {
   maxW:'container.lg',
 }
@@ -228,28 +226,23 @@ export const nftBoxStyle = {
   display:'flex',
   pb:7,
   justifyContent:'center',
- 
   parentBox: {
     bg: 'gray.800',
     w:'80%',
     rounded: 20,
     position:'relative',
-    
   }
 }
 export const nftCardContainer = {
   mt:'200px',
   textAlign:'center',
   flexDirection:{base:'column', md:'row', lg:'row'}
-  
 }
-
 export const nftCardImageStyle = {
   boxSize:'100px',
   position: 'absolute',
   top: -10
 }
-
 export const nftControlBigButton = {
   m:'80px auto',
   maxW:'600px',
@@ -272,13 +265,21 @@ export const productCardImageStyle = {
   boxSize:'100px',
   objectFit:'cover'
 }
-
 export const productsGridStyle = {
   templateColumns:{base:'repeat(1, 1fr)',md:'repeat(2, 1fr)',lg:'repeat(4, 1fr)'},
   gap: 4,
 }
+export const productBoxStyle = {
+  maxW:'container.lg'
+}
 
 //------Earn section-----//
+
+export const earnAvatarStyle = {
+  rounded:'5px',
+  w:50,
+  h:50
+}
 
 export const earnGridStyle = {
   maxW: { base: 'auto', md: 800 },
@@ -286,8 +287,14 @@ export const earnGridStyle = {
   templateColumns:{base:'repeat(1, 1fr)', lg:'repeat(2, 1fr)'},
   gap: 6 
 }
-
+export const earnContainerStyle = {
+  maxW:'container.lg'
+}
+export const earnBoxStyle = {
+  mt:'80px'
+}
 //-------cards section------//
+
 export const cardBoxStyle = {
   my:'100px'
 }
@@ -313,8 +320,8 @@ export const cardContainerStyle = {
   }
 }
 
-
 //-------Deploy section------//
+
 export const deployContainerStyle = {
   maxW:'container.lg'
 }
@@ -326,7 +333,6 @@ export const deployTabs = {
   my:'80px',
   orientation:'vertical'
 }
-
 export const deployTabButton = {
   _focus: {
     boxShadow:'none',
@@ -337,7 +343,6 @@ export const deployTabButton = {
   py:'20px',
   borderBottom:'2px solid gray' 
 }
-
 export const tabBoxStyle = {
   w:'200px'
 }
@@ -345,37 +350,48 @@ export const deployImageStyle = {
   w:'full'  
 }
 
-
 //------Easy Steps----//
 
 export const easyStepsContainerStyle = {
   maxW:'container.lg'
 }
-
+export const easyImageStyle = {
+  w:'full' 
+}
 export const easyStepsTabStyle = {
   w:'100%',
   _focus: {
     boxShadow: 'none'
   }
-  
 }
-
 export const boxTabsStyle = {
   py:'20px',
   _focus:{
     borderBottom:'1px solid white'
   }
 }
+export const easyTabStyle = {
+  m:'auto 0px'
+}
 
+//------Multiple-----//
+export const multipleContainerStyle = {
+  maxW:'container.lg'
+}
+export const multipleBoxStyle = {
+  my:'100px'
+}
 export const multipleGridStyle = {
   templateColumns:{base:'repeat(4, 1fr)', md:'repeat(6, 1fr)',lg:'repeat(9, 1fr)'}
 }
 
 //-------carousel------//
+export const carouselListStyle = {
+  display:'flex'
+}
 export const carouselBoxStyle = {
   my:'150px'
 }
-
 export const carouselContainerStyle = {
   maxW: 'container.lg'
 }
@@ -389,7 +405,6 @@ export const carouselImageStyle = {
    boxSize:'100px',
   objectFit:'cover'
 }
-
 export const carouselStyle = {
   pagination: false,
   breakPoints: 
@@ -397,16 +412,27 @@ export const carouselStyle = {
       { width: 1, itemsToShow: 1 },
       { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
       { width: 850, itemsToShow: 4 },
-    ]
-  
+    ] 
 }
 
 //----income-----//
 
+export const incomeContainerStyle = {
+  maxW:'container.lg'
+}
+export const incomeStackBoxStyle = {
+  pb:'40px'
+}
+export const incomeStackBoxStyled = {
+  rounded:20,
+  p:'20px"',
+  bg:'gray.900'
+}
 export const incomeBoxStyle= {
+}
+export const incomeStackStyle= {
   flexDirection:{ base:'column', lg:'row' },
 }
-
 export const incomeListStyle = {
   lineHeight:7
 }
@@ -416,15 +442,16 @@ export const incomeListStyle = {
 export const footerStackStyle ={
   flexDirection:{ base:'column', lg:'row' }
 }
-
 export const footerBoxStyle ={
   py:'30px',
   mt:'60px'
 }
-
 export const footerNavStyle = {
   display:'flex',
   textAlign:{base:'center', lg:'auto'},
   flexDirection:{base:'column', lg:'row'}
+}
+export const footerContainerStyle = {
+  maxW:'container.lg'
 }
 

@@ -2,7 +2,7 @@ import { Box, Container, Heading, Grid, Image, Text } from "@chakra-ui/react"
 
 
 //Style imports
-import { productCardStyle, productCardImageStyle,productsGridStyle, typoStyle } from '../styles/global'
+import { productCardStyle, productCardImageStyle,productsGridStyle, typoStyle,productBoxStyle } from '../styles/global'
 export const Products = () => {
 
   const cardItemList = [
@@ -66,23 +66,26 @@ export const Products = () => {
       title: 'Leaderbord',
       text: 'View Marketplace Performances'
     }
-    
   ]
+
+  const ProductCard = ({title,img,text}) => (
+    <Box {...productCardStyle}>
+      <Container>
+        <Image {...productCardImageStyle} src={img} />
+        <Heading {...typoStyle.title.product}>{title}</Heading>
+        <Text {...typoStyle.text.product}>{text}</Text>
+      </Container>
+    </Box>
+  )
 
   return (
     <Box>
-      <Container maxW="container.lg">
+      <Container {...productBoxStyle}>
         <Heading {...typoStyle.headline.product}>Products</Heading>
         <Grid {...productsGridStyle} >
           {
-            cardItemList.map(e => (
-              <Box {...productCardStyle}>
-                <Container>
-                  <Image {...productCardImageStyle} src={e.img} />
-                  <Heading {...typoStyle.title.product}>{e.title}</Heading>
-                  <Text {...typoStyle.text.product}>{e.text}</Text>
-                </Container>
-              </Box>
+            cardItemList.map((e,i) => (
+                <ProductCard key={i} {...e} />
             ))
           }
         </Grid>

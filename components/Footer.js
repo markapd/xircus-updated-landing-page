@@ -6,7 +6,7 @@ import { FaTelegramPlane, FaFacebook , FaTwitter, FaYoutube, FaGithub, FaInstagr
 import { AiFillLinkedin } from "react-icons/ai";
 
 //import styles 
-import { footerBoxStyle, typoStyle,footerStackStyle, footerNavStyle } from '../styles/global'
+import { footerBoxStyle, typoStyle,footerStackStyle, footerNavStyle,footerContainerStyle } from '../styles/global'
 
 const footerNav = [
   {
@@ -33,7 +33,7 @@ const footerNav = [
 export const Footer = () => {
   return (
     <Box {...footerBoxStyle}>
-      <Container maxW="container.lg">
+      <Container {...footerContainerStyle}>
         <HStack {...footerStackStyle}>
         <Text {...typoStyle.text.footer}> All Rights Reserved 2021 | Xircus Pte. Ltd </Text>
         <Spacer />
@@ -49,8 +49,8 @@ export const Footer = () => {
           <Spacer />
           <List {...footerNavStyle}>
             {
-              footerNav.map(e => (
-                <ListItem {...typoStyle.text.footer}>{e.label}</ListItem>
+              footerNav.map((e,i)=> (
+                <ListItem key={i} {...typoStyle.text.footer}>{e.label}</ListItem>
               ))
             }
           </List>

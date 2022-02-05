@@ -40,8 +40,8 @@ export const IncomeSection = () => {
             <Heading {...typoStyle.title.income}> Income Calculator </Heading>
             <UnorderedList {...incomeListStyle}>
               {
-                listText.map(e => (
-                  <ListItem {...typoStyle.subtext.income}>{e}</ListItem>
+                listText.map((e,i) => (
+                  <ListItem key={i} {...typoStyle.subtext.income}>{e}</ListItem>
                 ))
               } 
             </UnorderedList>

@@ -41,11 +41,7 @@ export const IncomeSection = () => {
           <Box {...incomeStackBoxStyle}>
             <Heading {...typoStyle.title.income}> {incomeSection('incomeTitle')} </Heading>
             <UnorderedList {...incomeListStyle}>
-              {
-                listText.map((e,i) => (
-                  <ListItem key={i} {...typoStyle.subtext.income}>{incomeSection(e)}</ListItem>
-                ))
-              } 
+              { listText.map((e,i) => <ListItem key={i} {...typoStyle.subtext.income}>{incomeSection(e)}</ListItem>)} 
             </UnorderedList>
           </Box>
           <Spacer />
@@ -65,13 +61,8 @@ export const IncomeSection = () => {
               </Slider>
             </Box>
             <HStack >
-            {
-                marketPrice.map((e,i) => (
-                  <Box key={i}>
-                    <Text {...typoStyle.subtext.income}> {incomeSection(e.market)} </Text>
-                    <Heading {...typoStyle.subheadline.income} > {e.price} </Heading>
-                  </Box>
-                ))
+              {
+                marketPrice.map((e,i) => <Box key={i}> <Text {...typoStyle.subtext.income}> {incomeSection(e.market)} </Text> <Heading {...typoStyle.subheadline.income} > {e.price} </Heading> </Box> )
               }
             </HStack>
           </Box>

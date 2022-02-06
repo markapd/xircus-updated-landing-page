@@ -46,11 +46,7 @@ export const CarouselSection = () => {
         <Heading {...typoStyle.title.carousel} > {carouselSection('carouselTitle')} </Heading>
         <List {...carouselListStyle}> 
           <Carousel {...carouselStyle} >
-            {
-              carouselItems.map((e,i)=> (
-                  <CarouselCard key={i} carouselSection={carouselSection} {...e} />
-              ))
-            }
+            { carouselItems.map((e,i)=> <CarouselCard key={i} carouselSection={carouselSection} {...e} />)  }
           </Carousel>
         </List>
       </Container>

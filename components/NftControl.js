@@ -1,8 +1,8 @@
-import { Box, Container, Heading, VStack, Text, HStack, Image, Button } from '@chakra-ui/react'
+import { Box, Container,Stack, Heading, VStack, Text, HStack, Image, Button } from '@chakra-ui/react'
 import { useTranslations } from 'next-intl'
 
 //syle imports 
-import { parentBox,nftControlBoxStyle, nftControlContainerStyle, nftBoxStyle, nftCardContainer,nftCardImageStyle, nftControlBigButton, typoStyle } from '../styles/global'
+import { nftCardWraperStyle,parentBox,nftControlBoxStyle, nftControlContainerStyle, nftBoxStyle, nftCardStack  ,nftCardImageStyle, nftControlBigButton, typoStyle } from '../styles/global'
 
 const itemCardList = [
   {
@@ -22,26 +22,26 @@ const itemCardList = [
     text:'cardFour'
   },
 ]
+
+const TokenCard = ({text,img, nftControl}) => (
+  <Box my="20px" {...parentBox}>
+    <Container>
+    <Box {...nftBoxStyle}>
+      <Image {...nftCardImageStyle} src={img} />
+      <Text {...typoStyle.text.nftControl}>{ nftControl((text))} </Text>
+    </Box>
+    </Container>
+  </Box>
+)
 export const NftControl = () => {
   const nftControl = useTranslations('NftControl')
   return (
     <Box {...nftControlBoxStyle}>
       <Container {...nftControlContainerStyle}>
-        <VStack>
-          <Heading> {nftControl('headLine')}  </Heading>
-          <Text> {nftControl('subHeadline')}  </Text>
-        </VStack>
-        <HStack {...nftCardContainer}>
-          {
-            itemCardList.map((e,i) => (
-              <Box key={i} {...parentBox}>
-                <Box {...nftBoxStyle}>
-                  <Image {...nftCardImageStyle} src={e.img} />
-                  <Text {...typoStyle.text.nftControl}>{ nftControl((e.text))} </Text>
-                </Box>
-              </Box>
-            ))
-          }
+          <Heading {...typoStyle.headline.nft}> {nftControl('headLine')}  </Heading>
+          <Text {...typoStyle.subheadline.nft}>    {nftControl('subHeadline')}  </Text>
+        <HStack alignItems='center' {...nftCardStack}>
+          { itemCardList.map((e,i) => <Stack {...nftCardWraperStyle} key={i}><TokenCard nftControl={nftControl} {...e} /> </Stack>) }
         </HStack>
         <Text {...typoStyle.text.nft} {...nftControlBigButton}> {nftControl('bigButton')}</Text>
       </Container>

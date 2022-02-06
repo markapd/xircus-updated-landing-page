@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useRouter } from 'next/router'
 import { Box, Button, Container, HStack, Select, Heading,  Spacer, ListItem, List, Image,   useDisclosure,  Drawer, DrawerOverlay, DrawerContent,
-        DrawerCloseButton,DrawerHeader,DrawerBody,Input ,DrawerFooter
+  DrawerCloseButton,DrawerHeader,DrawerBody,Input ,DrawerFooter
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { useTranslations } from 'next-intl';
@@ -25,7 +25,7 @@ const navItem = [
 ]
 const language = [
   {
-    path: '/',
+    path: '/en-US',
     label: 'ENGLISH'
   },
   {

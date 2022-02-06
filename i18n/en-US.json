@@ -4,7 +4,7 @@
     "FEATURES"    :"FEATURES",
     "GET-STARTED" :"GET STARTED",
     "HOW-TO-EARN" : "HOW TO EARN",
-    "FRENCE": "France",
+    "FRENCE": "Frence",
     "ENGLISH": "English"
   },
   "HeroSection": {
@@ -96,6 +96,7 @@
     "deploySeventhTab": "10k Avatar Marketplaces"
   },
   "EasyStepsSection": {
+    "easyHeading": "Easy Steps To Get Started",
     "easyFirstTab": "Deploy a Marketplace",
     "easySecondTab": "Deploy a Collection",
     "easyThirdTab": "Deploy a Min on NFT"
@@ -110,7 +111,7 @@
     "fifthAvatar": "MOONBEAM",
     "sixthAvatar": "MOONDRIVER",
     "seventhAvatar": "AVALANCHE",
-    "eightAvatar": "PDG",
+    "eightAvatar": "CELO",
     "ninthAvatar": "POA",
     "tenthAvatar": "XDAI",
     "elevenAvatar": "HECO",

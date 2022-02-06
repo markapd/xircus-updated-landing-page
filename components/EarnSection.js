@@ -47,13 +47,11 @@ export const EarnSection = ({ items = data }) => {
   return (
     <Box {...earnBoxStyle}>
       <Container {...earnContainerStyle}>
-            <Heading {...typoStyle.subheadline.earn}> {earnSection('earnHeadLine')}</Heading>
-            <Text {...typoStyle.subtext.earn}> {earnSection('earnSubHeadline')}</Text>
-          <Grid {...earnGridStyle}>
-            {
-              items.map((user, userKey) => <UserCard key={`user-${userKey}`} earnSection={earnSection} {...user} />)
-            }
-          </Grid>
+        <Heading {...typoStyle.subheadline.earn}> {earnSection('earnHeadLine')}</Heading>
+        <Text {...typoStyle.subtext.earn}> {earnSection('earnSubHeadline')}</Text>
+        <Grid {...earnGridStyle}>
+          { items.map((user, userKey) => <UserCard key={`user-${userKey}`} earnSection={earnSection} {...user} />) }
+        </Grid>
       </Container>
     </Box>
   )

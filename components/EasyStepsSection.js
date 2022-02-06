@@ -1,10 +1,9 @@
 import React from 'react';
-import { Box, Tabs, TabList,Tab,TabPanels,TabPanel, Container,Image } from '@chakra-ui/react'
+import { Box, Center,Heading,Tabs, TabList,Tab,TabPanels,TabPanel, Container,Image } from '@chakra-ui/react'
 
 //imports style
-import { easyStepsContainerStyle,easyStepsTabStyle,easyTabStyle,boxTabsStyle, easyImageStyle } from '../styles/global'
+import { easyStepsContainerStyle,easyStepsTabStyle,easyTabStyle,boxTabsStyle, easyImageStyle, easyBoxStyle, typoStyle } from '../styles/global'
 import { useTranslations } from 'next-intl';
-
 
 const tabItem = [
   {
@@ -24,28 +23,17 @@ const tabItem = [
 export const EasyStepsSection = () => {
   const easyStepsSection = useTranslations('EasyStepsSection')
   return (
-    <Box>
+    <Box {...easyBoxStyle}>
       <Container {...easyStepsContainerStyle}>
+        <Center>
+          <Heading {...typoStyle.headline.easy}>{easyStepsSection('easyHeading')}</Heading>
+        </Center>
        <Tabs>
         <TabList>
-          {
-            tabItem.map((e,i) => (
-              <Tab key={`second-${i}`} {...easyStepsTabStyle} >
-                <Box {...boxTabsStyle}>
-                  {easyStepsSection(e.tabs)}
-                </Box>
-              </Tab>
-            ))
-          }
+          { tabItem.map((e,i) => <Tab key={`second-${i}`} {...easyStepsTabStyle} > <Box {...boxTabsStyle}> {easyStepsSection(e.tabs)} </Box></Tab>) }
         </TabList>
         <TabPanels >
-        {
-          tabItem.map((e,i) => (
-            <TabPanel key={`first-${i}`} {...easyTabStyle}>
-              <Image {...easyImageStyle} src={e.img} />
-            </TabPanel>
-          ))
-        }
+          { tabItem.map((e,i) => <TabPanel key={`first-${i}`} {...easyTabStyle}><Image {...easyImageStyle} src={e.img} /> </TabPanel> )}
         </TabPanels>
       </Tabs>
       </Container>

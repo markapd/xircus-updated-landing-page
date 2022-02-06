@@ -63,9 +63,7 @@ export const Cards = () => {
     <Box {...cardBoxStyle}>
       <Container {...cardContainerStyle}>
         <Grid  {...cardGridStyle}>
-          {
-            gridCardsItems.map((e,i)=> <GridCard key={i} cards={cards} {...e} />)
-          }
+          { gridCardsItems.map((e,i)=> <GridCard key={i} cards={cards} {...e} />)}
         </Grid>
       </Container>
     </Box>

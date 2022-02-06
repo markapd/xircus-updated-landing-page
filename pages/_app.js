@@ -1,6 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../styles/theme'
-import {NextIntlProvider} from 'next-intl';
+import { NextIntlProvider } from 'next-intl';
 
 function MyApp({ Component, pageProps }) {
   return (

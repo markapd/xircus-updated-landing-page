@@ -4,7 +4,7 @@
     "FEATURES"    :"CARACTÉRISTIQUES",
     "GET-STARTED" :"COMMENCER",
     "HOW-TO-EARN" : "COMMENT GAGNER",
-    "FRENCE": "France",
+    "FRENCE": "Frence",
     "ENGLISH": "English"
   },
   "HeroSection": {
@@ -96,6 +96,7 @@
     "deploySeventhTab": "Marché d'avatars 10k"
   },
   "EasyStepsSection": {
+    "easyHeading": "Étapes faciles pour commencer",
     "easyFirstTab": "Déployer une place de marché",
     "easySecondTab": "Déployer une collection",
     "easyThirdTab": "Déployer un Min sur NFT"
@@ -110,7 +111,7 @@
     "fifthAvatar": "RAYON DE LUNE",
     "sixthAvatar": "MOONDRIVER",
     "seventhAvatar": "AVALANCHE",
-    "eightAvatar": "PDG",
+    "eightAvatar": "CELO",
     "ninthAvatar": "POA",
     "tenthAvatar": "XDAI",
     "elevenAvatar": "HECO",

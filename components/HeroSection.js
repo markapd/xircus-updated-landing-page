@@ -3,10 +3,7 @@ import { useTranslations } from 'next-intl';
 import { GiPlayButton } from "react-icons/gi";
 
 // imports style
-import { heroBoxStyle, heroLogoStyle, heroTextStyle  , typoStyle, heroPlayButton,
-   heroGradientButton, asSeenImageContainerStyle, asSeenImageStyle, asSeenBoxImage,heroButton,heroAsSeenStyle,heroContainerStyle } from '../styles/global'
-
-
+import { heroBoxStyle, heroLogoStyle, heroTextStyle  , typoStyle, heroPlayButton, heroGradientButton, asSeenImageContainerStyle, asSeenImageStyle, asSeenBoxImage,heroButton,heroAsSeenStyle,heroContainerStyle } from '../styles/global'
 
 const brandLogo = [
   'https://uc62d9e9f51b297fe70cd62e2f16.previews.dropboxusercontent.com/p/thumb/ABbSLzpvnvefbFZnHMRu3QTeuGNoy8kU2oVF-uPXRVNgyavtlpKD1odgbhVL-VIjBDhwsuggwuOOPAUql20ZA9HBZZ3SKPLXpPmYUpj0sIogxWeK-R3ak5gYAM9WGB3zmYTpHG5p37rqqEV0Hxd8YMaZWSOvcaGEZaockYIgj8FH0DeYQ9WvPxIOoAErTm5AwT74tnETDjUQS-kD1rSSBiaktWKuaexirsnoa0gWLGBfWnJsLRNQ45ujigjZH7QXXxxcccjuCN0KUzSUKPW0vWLbOfVet8Kh2APRBNRnVHW0rUWdbxH7Z4rxegdEE2Dhj6h_OgiKTzuf8oaFjY8VKED9gwVEOZz8HiCUB1lU6O48clhuXfem_yvEAFrWTH9WPBA/p.png',
@@ -25,7 +22,9 @@ export const HeroSection = () => {
           <Heading {...typoStyle.subheadline.hero}> {heroSection('heroHeadline')} </Heading>
           <Heading {...typoStyle.subheadline.hero}> {heroSection('heroHeadline2')} </Heading>
           <Text {...typoStyle.text.hero}> {heroSection('heroSubHeadline')} </Text>
-          <Button {...heroPlayButton}><GiPlayButton /></Button>
+          <Button {...heroPlayButton}>
+            <GiPlayButton />
+          </Button>
           <HStack {...heroButton}>
             <Button {...typoStyle.text.hero} {...heroGradientButton}> {heroSection('firstButton')} </Button>
             <Button {...typoStyle.text.hero} {...heroGradientButton}> {heroSection('secondButton')} </Button>
@@ -35,15 +34,9 @@ export const HeroSection = () => {
       <Container {...asSeenImageContainerStyle}>
         <HStack {...heroAsSeenStyle}>
             <Box {...asSeenBoxImage}>{heroSection('asSeen')} </Box>
-            {
-              brandLogo.map((e,i) => (
-              <Box key={i} {...asSeenBoxImage}>
-                <Image {...asSeenImageStyle} src={e} />
-              </Box>
-              ))
-            }  
+            { brandLogo.map((e,i) => <Box key={i} {...asSeenBoxImage}> <Image {...asSeenImageStyle} src={e} /></Box> )}  
         </HStack>
-        </Container>
+      </Container>
     </Box>
   )
 }

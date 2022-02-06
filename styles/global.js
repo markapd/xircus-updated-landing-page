@@ -381,8 +381,12 @@ export const deployImageStyle = {
 
 //------Easy Steps----//
 export const easyBoxStyle = {
+  py:'80px',
+  bgGradient:'linear(to-br, #FC8181,#4FD1C5,#9F7AEA,)',
+  style:{
+    clipPath: 'polygon(0 0, 100% 7%, 100% 100%, 0 95%)'
+  }
 }
-
 export const easyStepsContainerStyle = {
   maxW:'container.lg'
 }

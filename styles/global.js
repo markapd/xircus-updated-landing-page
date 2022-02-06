@@ -124,6 +124,7 @@ export const typoStyle = {
 
 export const webBackgroundStyle = {
 color: 'white',
+bgSize:'cover',
 bgImage: 'https://uc4a60e56a995c89b4475baa5fcd.previews.dropboxusercontent.com/p/thumb/ABZhv1mjv_eyh1PirXQag9Ljjz9ztLHta8Fj8an7rRm0K0Ooy4aLOfIspXFWTxu70Rt-5oc4EErzU6qoOWP7cLNXgdzV6FWYbvoC0M6_rZKEGoZR5Rmi3tjeOAnpmgz8G43k7o1xhmR6l_D0DV6B8izyDB3T0spqmg3U-oCZ7VcZtnnOJeB2hT9WzhksYFVocIlHB2Iq7hM8ghQalSp5SAdYjpQXE02bTt-G8poU8TN02-thiX03LJ8M-7WEZi2-TeutPpp9TRMTcPQN30rkHKbKm1r8VOE7xqmoB5lJ8i8Y5j2PDUY7ne3RWDEnEQjxclXMzGZv-oMPrpmUU0ZOr_ElJHgUTLGaAgCi5ms-7c6Rk8tNnUHVHR1XxtrtkdIo24o/p.png'
 }
 
@@ -285,13 +286,13 @@ export const nftControlBigButton = {
 //-----Procducts-----///
 
 export const productCardStyle = {
-  py: '10px',
+  p: '35px',
   w:'100%',
   rounded: '20px',
   bg:'gray.900'
 }
 export const productCardImageStyle = {
-  boxSize:'100px',
+  boxSize:'90px',
   objectFit:'cover'
 }
 export const productsGridStyle = {
@@ -325,18 +326,19 @@ export const earnBoxStyle = {
 //-------cards section------//
 
 export const cardBoxStyle = {
-  my:'100px'
+  my:'100px',
 }
 export const  cardGridStyle = {
   templateColumns:{base:'repeat(1, 1fr)',md:'repeat(2, 1fr)',lg:'repeat(4, 1fr)'},
   gap: 4,
 }
 export const cardImageStyle = {
-  boxSize:'100px',
+  boxSize:'80px',
   objectFit:'cover'
 }
 export const cardStyle = {
-  lineHeight: '25px',
+  lineHeight: '20px',
+  p:'25px',
   w:'100%',
   rounded: '20px',
   bgGradient:'linear(to-t, #8a2387, #e94057, #f27121)'

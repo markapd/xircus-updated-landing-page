@@ -69,11 +69,11 @@ const cardItemList = [
 
 const ProductCard = ({title,img,text,products}) => (
   <Box {...productCardStyle}>
-    <Container>
+    {/* <Box > */}
       <Image {...productCardImageStyle} src={img} />
       <Heading {...typoStyle.title.product}>{products(title)}</Heading>
       <Text {...typoStyle.text.product}>{products(text)} </Text>
-    </Container>
+    {/* </Box> */}
   </Box>
 )
 export const Products = () => {

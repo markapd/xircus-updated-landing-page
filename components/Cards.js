@@ -49,11 +49,9 @@ const gridCardsItems = [
 
 const GridCard = ({img, title, text, cards}) => (
     <Box {...cardStyle}>
-      <Container {...cardContainerStyle.child}>
-        <Image {...cardImageStyle} src={img}/>
-        <Heading {...typoStyle.title.card}>{cards(title)}</Heading>
-        <Text {...typoStyle.text.card}>{cards(text)}</Text>
-      </Container>
+      <Image {...cardImageStyle} src={img}/>
+      <Heading {...typoStyle.title.card}>{cards(title)}</Heading>
+      <Text {...typoStyle.text.card}>{cards(text)}</Text>
     </Box>
 )
 

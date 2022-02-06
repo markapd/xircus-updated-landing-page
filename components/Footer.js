@@ -50,11 +50,7 @@ const footer = useTranslations('Footer')
           </HStack>
           <Spacer />
           <List {...footerNavStyle}>
-            {
-              footerNav.map((e,i)=> (
-                <ListItem key={i} {...typoStyle.text.footer}>{footer(e.label)}</ListItem>
-              ))
-            }
+            { footerNav.map((e,i)=> <ListItem key={i} {...typoStyle.text.footer}>{footer(e.label)}</ListItem> )}
           </List>
         </HStack>
       </Container>

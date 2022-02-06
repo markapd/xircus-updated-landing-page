@@ -170,7 +170,7 @@ export const heroLogoStyle = {
 }
 export const heroBoxStyle = {
   py:'60px',
-  mt:'50px'
+  mt:'30px'
 }
 export const heroPlayButton = {
   rounded: '100%',
@@ -226,12 +226,12 @@ export const nftBoxStyle = {
   display:'flex',
   pb:7,
   justifyContent:'center',
-  parentBox: {
-    bg: 'gray.800',
-    w:'80%',
-    rounded: 20,
-    position:'relative',
-  }
+}
+export const parentBox = {
+  bg: 'gray.800',
+  w:'80%',
+  rounded: 20,
+  position:'relative',
 }
 export const nftCardContainer = {
   mt:'200px',

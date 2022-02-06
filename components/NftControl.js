@@ -2,7 +2,7 @@ import { Box, Container, Heading, VStack, Text, HStack, Image, Button } from '@c
 import { useTranslations } from 'next-intl'
 
 //syle imports 
-import { nftControlBoxStyle, nftControlContainerStyle, nftBoxStyle, nftCardContainer,nftCardImageStyle, nftControlBigButton, typoStyle } from '../styles/global'
+import { parentBox,nftControlBoxStyle, nftControlContainerStyle, nftBoxStyle, nftCardContainer,nftCardImageStyle, nftControlBigButton, typoStyle } from '../styles/global'
 
 const itemCardList = [
   {
@@ -34,7 +34,7 @@ export const NftControl = () => {
         <HStack {...nftCardContainer}>
           {
             itemCardList.map((e,i) => (
-              <Box key={i} {...nftBoxStyle.parentBox}>
+              <Box key={i} {...parentBox}>
                 <Box {...nftBoxStyle}>
                   <Image {...nftCardImageStyle} src={e.img} />
                   <Text {...typoStyle.text.nftControl}>{ nftControl((e.text))} </Text>

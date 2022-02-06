@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useRouter } from 'next/router'
 import { Box, Button, Container, HStack, Select, Heading,  Spacer, ListItem, List, Image,   useDisclosure,  Drawer, DrawerOverlay, DrawerContent,
         DrawerCloseButton,DrawerHeader,DrawerBody,Input ,DrawerFooter
 } from '@chakra-ui/react'
@@ -21,19 +22,16 @@ const navItem = [
     path: '#',
     label: 'HOW-TO-EARN',
   },
-
 ]
-
 const language = [
   {
-    country: 'America',
+    path: '/',
     label: 'ENGLISH'
   },
   {
-    country: 'Japan',
+    path: '/fr',
     label: 'FRENCE'
   },
-  
 ]
 
 const DrawerExample = () => {
@@ -50,19 +48,11 @@ const DrawerExample = () => {
           <DrawerCloseButton color='black' />
           <DrawerHeader>Create your account</DrawerHeader>
           <DrawerBody>
-          <List  >
-              { 
-                navItem.map((e,i) => (
-                  <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{e.label}</ListItem>
-                ))
-              }
+            <List  >
+              { navItem.map((e,i) => <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{e.label}</ListItem> )}
             </List>
-            <Select {...typoStyle.text.header} >
-            {
-              language.map((e,i)=> (
-                <option key={i} value='option1'>{e.country}</option>
-              ))
-            }
+            <Select {...typoStyle.text.header}>
+              { language.map((e,i)=>  <option key={i} value={e.path}>{e.label}</option> ) }
             </Select>
           </DrawerBody>
         </DrawerContent>
@@ -73,6 +63,7 @@ const DrawerExample = () => {
 
 export const Header = () => {
 const header = useTranslations('Header');
+const router = useRouter()
 
   return (
     <Box {...headerBoxStyle}>
@@ -83,18 +74,10 @@ const header = useTranslations('Header');
           <Spacer />
           <DrawerExample />
             <List {...navListStyle} >
-              { 
-                navItem.map((e,i) => (
-                  <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{header(e.label)}</ListItem>
-                ))
-              }
+              {  navItem.map((e,i) => <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{header(e.label)}</ListItem>) }
             </List>
-          <Select  {...typoStyle.text.header} {...selectStyle}>
-            {
-              language.map((e,i) => (
-                <option key={i} value={e.country}>{header(e.label)}</option>
-              ))
-            }
+          <Select  {...typoStyle.text.header} {...selectStyle} onChange={(e) => router.push(e.target.value)}>
+            { language.map((e,i) => <option key={i} value={e.path}>{header(e.label)}</option> ) }
         </Select> 
         </HStack>
       </Container>

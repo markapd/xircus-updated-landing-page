@@ -32,26 +32,26 @@ const data = [
   },
 ]
 
-const UserCard = ({ title, text , earnsection}) => (
+const UserCard = ({ title, text , earnSection}) => (
   <HStack>
     <Image src="http://placehold.it/100x100" {...earnAvatarStyle} />
     <Box>
-      <Heading {...typoStyle.title.earn}>{earnsection(title)}</Heading>
-      <Text  {...typoStyle.text.earn}>{earnsection(text)}</Text>
+      <Heading {...typoStyle.title.earn}>{earnSection(title)}</Heading>
+      <Text  {...typoStyle.text.earn}>{earnSection(text)}</Text>
     </Box>
   </HStack>
 )
 
 export const EarnSection = ({ items = data }) => {
-  const earnsection = useTranslations('EarnSection')
+  const earnSection = useTranslations('EarnSection')
   return (
     <Box {...earnBoxStyle}>
       <Container {...earnContainerStyle}>
-            <Heading {...typoStyle.subheadline.earn}> {earnsection('earnHeadLine')}</Heading>
-            <Text {...typoStyle.subtext.earn}> {earnsection('earnSubHeadline')}</Text>
+            <Heading {...typoStyle.subheadline.earn}> {earnSection('earnHeadLine')}</Heading>
+            <Text {...typoStyle.subtext.earn}> {earnSection('earnSubHeadline')}</Text>
           <Grid {...earnGridStyle}>
             {
-              items.map((user, userKey) => <UserCard key={`user-${userKey}`} earnsection={earnsection} {...user} />)
+              items.map((user, userKey) => <UserCard key={`user-${userKey}`} earnSection={earnSection} {...user} />)
             }
           </Grid>
       </Container>

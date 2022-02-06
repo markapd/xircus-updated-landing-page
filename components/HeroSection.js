@@ -16,25 +16,25 @@ const brandLogo = [
   'https://upload.wikimedia.org/wikipedia/en/d/d6/Digital-Journal-Logo.png'
 ]
 export const HeroSection = () => {
-  const herosection = useTranslations('HeroSection')
+  const heroSection = useTranslations('HeroSection')
   return (
     <Box {...heroBoxStyle}>
       <Container {...heroContainerStyle}>
         <VStack spacing={30}>
           <Image {...heroLogoStyle} src="https://icoholder.com/files/img/6f7203a158209cb2e9143d6631cbb7c2.png" />
-          <Heading {...typoStyle.subheadline.hero}> {herosection('heroHeadline')} </Heading>
-          <Heading {...typoStyle.subheadline.hero}> {herosection('heroHeadline2')} </Heading>
-          <Text {...typoStyle.text.hero}> {herosection('heroSubHeadline')} </Text>
+          <Heading {...typoStyle.subheadline.hero}> {heroSection('heroHeadline')} </Heading>
+          <Heading {...typoStyle.subheadline.hero}> {heroSection('heroHeadline2')} </Heading>
+          <Text {...typoStyle.text.hero}> {heroSection('heroSubHeadline')} </Text>
           <Button {...heroPlayButton}><GiPlayButton /></Button>
           <HStack {...heroButton}>
-            <Button {...typoStyle.text.hero} {...heroGradientButton}> {herosection('firstButton')} </Button>
-            <Button {...typoStyle.text.hero} {...heroGradientButton}> {herosection('secondButton')} </Button>
+            <Button {...typoStyle.text.hero} {...heroGradientButton}> {heroSection('firstButton')} </Button>
+            <Button {...typoStyle.text.hero} {...heroGradientButton}> {heroSection('secondButton')} </Button>
           </HStack>
         </VStack>
       </Container>
       <Container {...asSeenImageContainerStyle}>
         <HStack {...heroAsSeenStyle}>
-            <Box {...asSeenBoxImage}>{herosection('asSeen')} </Box>
+            <Box {...asSeenBoxImage}>{heroSection('asSeen')} </Box>
             {
               brandLogo.map((e,i) => (
               <Box key={i} {...asSeenBoxImage}>

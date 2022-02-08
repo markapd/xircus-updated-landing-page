@@ -7,32 +7,8 @@ import { AiFillLinkedin } from "react-icons/ai";
 
 //import styles 
 import { footerBoxStyle, typoStyle,footerStackStyle, footerNavStyle,footerContainerStyle } from '../styles/global'
-import { useTranslations } from 'next-intl';
 
-const footerNav = [
-  {
-    path:'#',
-    label: 'blog'
-  },
-  {
-    path:'#',
-    label: 'resources'
-  },
-  {
-    path:'#',
-    label: 'terms'
-  },
-  {
-    path:'#',
-    label: 'privacy'
-  },
-  {
-    path:'#',
-    label: 'contact'
-  },
-]
-export const Footer = () => {
-const footer = useTranslations('Footer')
+export const Footer = ({data, footer}) => {
   return (
     <Box {...footerBoxStyle}>
       <Container {...footerContainerStyle}>
@@ -50,7 +26,7 @@ const footer = useTranslations('Footer')
           </HStack>
           <Spacer />
           <List {...footerNavStyle}>
-            { footerNav.map((e,i)=> <ListItem key={i} {...typoStyle.text.footer}>{footer(e.label)}</ListItem> )}
+            { data.map((e,i)=> <ListItem key={i} {...typoStyle.text.footer}>{footer(e.label)}</ListItem> )}
           </List>
         </HStack>
       </Container>

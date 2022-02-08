@@ -2,7 +2,6 @@ import { useState } from "react"
 import { Box, Container, Heading, HStack, ListItem, UnorderedList, Text,Slider, SliderMark,SliderTrack,SliderFilledTrack,SliderThumb, Divider, Spacer } from "@chakra-ui/react"
 
 import {incomeBoxStyle, typoStyle,incomeListStyle, incomeStackStyle, incomeContainerStyle, incomeStackBoxStyle,incomeStackBoxStyled} from '../styles/global'
-import { useTranslations } from "next-intl"
 
 const listText = [
   'firstList',
@@ -31,8 +30,7 @@ const marketPrice = [
   },
 ]
 
-export const IncomeSection = () => {
-  const incomeSection = useTranslations('IncomeSection')
+export const IncomeSection = ({incomeSection}) => {
   const [sliderValue, setSliderValue] = useState(50)
   return (
     <Box {...incomeBoxStyle}>

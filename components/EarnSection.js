@@ -1,36 +1,7 @@
 import { Box, Container, VStack, Heading, Text, Image, HStack, Grid, Avatar, Center} from '@chakra-ui/react';
-import { useTranslations } from 'next-intl';
 import React from 'react';
-
 //imports style
 import { earnGridStyle, typoStyle, earnContainerStyle, earnBoxStyle, earnAvatarStyle } from '../styles/global'
-
-const data = [
-  {
-    title: 'firstBoxHead',
-    text: 'firstBoxText'
-  },
-  {
-    title: 'secondBoxHead',
-    text: 'secondtBoxText'
-  },  
-  {
-    title: 'thirdBoxHead',
-    text: 'thirdBoxText'
-  },
-  {
-    title: 'fourthBoxHead',
-    text: 'fourthBoxText'
-  },
-  {
-    title: 'fifthBoxHead',
-    text: 'fifthBoxText'
-  },
-  {
-    title: 'sixthBoxHead',
-    text: 'sixthBoxText'
-  },
-]
 
 const UserCard = ({ title, text , earnSection}) => (
   <HStack>
@@ -42,15 +13,14 @@ const UserCard = ({ title, text , earnSection}) => (
   </HStack>
 )
 
-export const EarnSection = ({ items = data }) => {
-  const earnSection = useTranslations('EarnSection')
+export const EarnSection = ({ data, earnSection }) => {
   return (
     <Box {...earnBoxStyle}>
       <Container {...earnContainerStyle}>
         <Heading {...typoStyle.subheadline.earn}> {earnSection('earnHeadLine')}</Heading>
         <Text {...typoStyle.subtext.earn}> {earnSection('earnSubHeadline')}</Text>
         <Grid {...earnGridStyle}>
-          { items.map((user, userKey) => <UserCard key={`user-${userKey}`} earnSection={earnSection} {...user} />) }
+          { data.map((user, userKey) => <UserCard key={`user-${userKey}`} earnSection={earnSection} {...user} />) }
         </Grid>
       </Container>
     </Box>

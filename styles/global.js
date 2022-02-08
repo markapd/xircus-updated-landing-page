@@ -79,7 +79,8 @@ export const typoStyle = {
       mr:'10px'
     },
     header: {
-      fontSize: '12px'
+      fontSize: '12px',
+      fontWeight:'bold'
     },
     hero: {
       fontSize:'15px',
@@ -125,11 +126,27 @@ export const typoStyle = {
 export const webBackgroundStyle = {
 color: 'white',
 bgSize:'cover',
-bgImage: 'https://uc4a60e56a995c89b4475baa5fcd.previews.dropboxusercontent.com/p/thumb/ABZhv1mjv_eyh1PirXQag9Ljjz9ztLHta8Fj8an7rRm0K0Ooy4aLOfIspXFWTxu70Rt-5oc4EErzU6qoOWP7cLNXgdzV6FWYbvoC0M6_rZKEGoZR5Rmi3tjeOAnpmgz8G43k7o1xhmR6l_D0DV6B8izyDB3T0spqmg3U-oCZ7VcZtnnOJeB2hT9WzhksYFVocIlHB2Iq7hM8ghQalSp5SAdYjpQXE02bTt-G8poU8TN02-thiX03LJ8M-7WEZi2-TeutPpp9TRMTcPQN30rkHKbKm1r8VOE7xqmoB5lJ8i8Y5j2PDUY7ne3RWDEnEQjxclXMzGZv-oMPrpmUU0ZOr_ElJHgUTLGaAgCi5ms-7c6Rk8tNnUHVHR1XxtrtkdIo24o/p.png'
+bgImage: 'https://uc6d9934e063e5a9801ab4a2cd92.previews.dropboxusercontent.com/p/thumb/ABbVkj2MMK77-qujFbizKXi-qH7tty-gfFtXunekY0wvnDaxKf_PJRCTs59TKpfhjYixP-PJr2yfqTl5YnsdAyYQDbBUF_USyHlJ-j8i-U_AcwiadVZqT6QPrsrMm4ZoPnyYza9IcWBuAQm8_BPbXxbYF8MXrwAamn7NKg6li1vNwJ7CngcsJQz8lG4K3z6823a0gFOgAmqYkToC3rJgqcrdHaON20LSfbUaMViLvuRiWJvCRWCWmOqWHEGNBxA2oxb4zcHUCvlFTBd8Lhgq5ez5KC2E4EukLyhQXN9wEchurQPrYoTDijQyAfIaaGUhW1VJ06wfkQKujIos5fk6JxtVlY051JI25Sx4U7ILJwDoPjLWDE--EFZcfuTBxkeiMIw/p.png'
 }
 
 //-------------Header----------//
 
+export const headerDrawerStyle = {
+  display:{base:'block', lg:'none'},
+  bg:'transparent',
+  _hover: {
+    bg:'none'
+  },
+  _focus: {
+    bg:'none',
+    boxShadow: 'none'
+  },
+}
+export const headerDrawerContentStyle = {
+  bg:'transparent',
+  color:'white',
+  backdropFilter:'blur(15px)'
+}
 export const headerContainerStyle = {
   maxW: 'container.xl'
 }
@@ -162,7 +179,6 @@ export const selectStyle = {
   w:"100px",
   rounded: 30,
   display: {base:'none', lg:'block'},
-  placeholder:'Lang',
   _focus: {
     boxShadow:'none'
   }
@@ -172,17 +188,6 @@ export const selectStyle = {
 
 export const heroContainerStyle = {
   maxW:'container.lg'
-}
-export const headerDrawerStyle = {
-  display:{base:'block', lg:'none'},
-  bg:'transparent',
-  _hover: {
-    bg:'none'
-  },
-  _focus: {
-    bg:'none',
-    boxShadow: 'none'
-  },
 }
 export const heroButton = {
   flexDirection: {base: 'column', lg: 'row'},
@@ -194,7 +199,7 @@ export const heroLogoStyle = {
 }
 export const heroBoxStyle = {
   py:'20px',
-  mt:'20px'
+  mt:'10px'
 }
 export const heroPlayButton = {
   rounded: '50%',
@@ -212,7 +217,20 @@ export const heroPlayButton = {
 export const heroAsSeenStyle = {
   flexDirection: { base:'column', lg:'row'},
   }
-export const heroGradientButton = {
+export const heroGradientButton1 = {
+  color:'white',
+  transition:'all 300ms ease',
+  my:'10px',
+  rounded:'full',
+  borderRadius:'6px',
+  size:'lg',
+  bgGradient:'linear(to-l, #8a2387, #e94057, #f27121)',
+  _focus: { 
+    boxShadow:'none'
+   },
+  _hover:{ bg: '#111', bgGradient: 'linear(to-l, #8a2387, #e94057, #f27121)' }
+}
+export const heroGradientButton2 = {
   color:'white',
   transition:'all 300ms ease',
   my:'10px',
@@ -260,6 +278,7 @@ export const nftBoxStyle = {
 export const parentBox = {
   bgGradient: 'linear(to-t, #1A202C, #1A202C, #652B19)',
   w:'100%',
+  my:'20px',
   rounded: 20,
   position:'relative',
 }
@@ -289,7 +308,7 @@ export const productCardStyle = {
   p: '35px',
   w:'100%',
   rounded: '20px',
-  bg:'gray.900'
+  bg:'gray.900',
 }
 export const productCardImageStyle = {
   boxSize:'90px',
@@ -323,6 +342,7 @@ export const earnContainerStyle = {
 export const earnBoxStyle = {
   mt:'80px'
 }
+
 //-------cards section------//
 
 export const cardBoxStyle = {
@@ -341,7 +361,7 @@ export const cardStyle = {
   p:'25px',
   w:'100%',
   rounded: '20px',
-  bgGradient:'linear(to-t, #8a2387, #e94057, #f27121)'
+  bgGradient:'linear(to-br, #319795, #E53E3E, #6B46C1)'
 }
 
 export const cardContainerStyle = {
@@ -372,7 +392,8 @@ export const deployTabButton = {
     bg: 'red.500'
   },
   py:'20px',
-  borderBottom:'2px solid gray' 
+  borderBottom:'1px solid gray', 
+  borderTop:'1px solid gray' 
 }
 export const tabBoxStyle = {
   w:'200px'
@@ -442,7 +463,7 @@ export const carouselCardStyle = {
   w:'100%',
   p:'60px 30px',
   rounded: '20px',
-  bg:'gray.800'
+  bg:'gray.900',
 }
 export const carouselImageStyle = {
    boxSize:'100px',

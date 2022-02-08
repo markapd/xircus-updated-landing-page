@@ -1,0 +1,26 @@
+[
+  {
+    "title": "firstBoxHead",
+    "text": "firstBoxText"
+  },
+  {
+    "title": "secondBoxHead",
+    "text": "secondtBoxText"
+  },  
+  {
+    "title": "thirdBoxHead",
+    "text": "thirdBoxText"
+  },
+  {
+    "title": "fourthBoxHead",
+    "text": "fourthBoxText"
+  },
+  {
+    "title": "fifthBoxHead",
+    "text": "fifthBoxText"
+  },
+  {
+    "title": "sixthBoxHead",
+    "text": "sixthBoxText"
+  }
+]

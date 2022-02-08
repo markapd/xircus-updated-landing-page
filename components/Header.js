@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useRouter } from 'next/router'
+import Router  from 'next/router'
 import { Box, Button, Container, HStack, Select, Heading,  Spacer, ListItem, List, Image,   useDisclosure,  Drawer, DrawerOverlay, DrawerContent,
   DrawerCloseButton,DrawerHeader,DrawerBody,Input ,DrawerFooter
 } from '@chakra-ui/react'
@@ -7,7 +7,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import { useTranslations } from 'next-intl';
 
 //imports style
-import { navListStyle, navItemStyle, selectStyle, logoStyle, headerBoxStyle , typoStyle, headerDrawerStyle, headerContainerStyle }     from '../styles/global'
+import { headerDrawerContentStyle,navListStyle, navItemStyle, selectStyle, logoStyle, headerBoxStyle , typoStyle, headerDrawerStyle, headerContainerStyle }     from '../styles/global'
 
 const navItem = [
   {
@@ -25,16 +25,16 @@ const navItem = [
 ]
 const language = [
   {
-    path: '/en-US',
+    path: 'en-US',
     label: 'ENGLISH'
   },
   {
-    path: '/fr',
+    path: 'fr',
     label: 'FRENCE'
   },
 ]
 
-const DrawerExample = () => {
+const DrawerExample = ({ header }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef()
   return (
@@ -44,12 +44,12 @@ const DrawerExample = () => {
       </Button>
       <Drawer isOpen={isOpen} placement='right' onClose={onClose}finalFocusRef={btnRef} >
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton color='black' />
-          <DrawerHeader>Create your account</DrawerHeader>
-          <DrawerBody>
+        <DrawerContent {...headerDrawerContentStyle}>
+          <DrawerCloseButton  />
+          <DrawerHeader>Xircus</DrawerHeader>
+          <DrawerBody >
             <List  >
-              { navItem.map((e,i) => <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{e.label}</ListItem> )}
+              { navItem.map((e,i) => <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{header(e.label)}</ListItem>)}
             </List>
             <Select {...typoStyle.text.header}>
               { language.map((e,i)=>  <option key={i} value={e.path}>{e.label}</option> ) }
@@ -61,10 +61,7 @@ const DrawerExample = () => {
   )
 }
 
-export const Header = () => {
-const header = useTranslations('Header');
-const router = useRouter()
-
+export const Header = ({header}) => {
   return (
     <Box {...headerBoxStyle}>
       <Container {...headerContainerStyle}>
@@ -72,11 +69,11 @@ const router = useRouter()
           <Heading><Image {...logoStyle} src="https://icoholder.com/files/img/6f7203a158209cb2e9143d6631cbb7c2.png" /></Heading>
           <Heading {...typoStyle.headline.logo}>{header('titleLogo')}</Heading>
           <Spacer />
-          <DrawerExample />
+          <DrawerExample header={header} />
             <List {...navListStyle} >
-              {  navItem.map((e,i) => <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{header(e.label)}</ListItem>) }
+              { navItem.map((e,i) => <ListItem key={i} {...typoStyle.text.header} {...navItemStyle}>{header(e.label)}</ListItem>)}
             </List>
-          <Select  {...typoStyle.text.header} {...selectStyle} onChange={(e) => router.push(e.target.value)}>
+          <Select {...typoStyle.text.header} {...selectStyle} onChange={(e) => Router.push('/','/',{locale:e.target.value})}>
             { language.map((e,i) => <option key={i} value={e.path}>{header(e.label)}</option> ) }
         </Select> 
         </HStack>

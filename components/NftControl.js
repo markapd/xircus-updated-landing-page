@@ -13,18 +13,17 @@ const TokenCard = ({text,img, nftControl}) => (
     </Container>
   </Box>
 )
-export const NftControl = ({data ,nftControl}) => {
-  return (
+export const NftControl = ({data ,nftControl}) => (
     <Box {...nftControlBoxStyle}>
       <Container {...nftControlContainerStyle}>
           <Heading {...typoStyle.headline.nft}> {nftControl('headLine')}  </Heading>
           <Text {...typoStyle.subheadline.nft}>    {nftControl('subHeadline')}  </Text>
-          <HStack alignItems='center' {...nftCardStack}>
+          <HStack {...nftCardStack}>
             { data.map((e,i) => <Stack {...nftCardWraperStyle} key={i}><TokenCard nftControl={nftControl} {...e} /> </Stack>) }
           </HStack>
         <Text {...typoStyle.text.nft} {...nftControlBigButton}> {nftControl('bigButton')}</Text>
       </Container>
     </Box>  
   )
-}
+
 

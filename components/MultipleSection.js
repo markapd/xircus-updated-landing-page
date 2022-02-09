@@ -1,4 +1,5 @@
 import { Box, Container,Image, Heading, Text, Grid, Avatar, Stack, VStack, Center } from '@chakra-ui/react';
+import { useTranslations } from 'next-intl';
 
 //import style
 import { multipleGridStyle, typoStyle, multipleContainerStyle, multipleBoxStyle, multipleStackStyle,multipleNftLogoStyle } from '../styles/global'
@@ -10,8 +11,7 @@ const GridListItems = ({icon, label, multipleSection}) => (
   </VStack>
 )
 
-export const MultipleSection = ({data, multipleSection}) => {  
-  return (
+export const MultipleSection = ({data,multipleSection}) => (
     <Box {...multipleBoxStyle}>
       <Container {...multipleContainerStyle}>
           <Heading {...typoStyle.subheadline.multiple}> {multipleSection('multipleTitle')} </Heading>
@@ -22,5 +22,4 @@ export const MultipleSection = ({data, multipleSection}) => {
       </Container>
     </Box>
   )
-}
 

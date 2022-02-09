@@ -17,8 +17,7 @@ const CarouselCard = ({img, text, carouselSection}) => (
   </ListItem>
 )
 
-export const CarouselSection = ({data, carouselSection}) => {
-  return (
+export const CarouselSection = ({data, carouselSection}) => (
     <Box {...carouselBoxStyle}>
       <Container {...carouselContainerStyle}>
         <Heading {...typoStyle.title.carousel} > {carouselSection('carouselTitle')} </Heading>
@@ -30,5 +29,4 @@ export const CarouselSection = ({data, carouselSection}) => {
       </Container>
     </Box>
   )
-}
 

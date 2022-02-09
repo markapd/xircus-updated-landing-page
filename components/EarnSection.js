@@ -3,9 +3,9 @@ import React from 'react';
 //imports style
 import { earnGridStyle, typoStyle, earnContainerStyle, earnBoxStyle, earnAvatarStyle } from '../styles/global'
 
-const UserCard = ({ title, text , earnSection}) => (
+const UserCard = ({ title, text , earnSection, img}) => (
   <HStack>
-    <Image src="http://placehold.it/100x100" {...earnAvatarStyle} />
+    <Image src={img} {...earnAvatarStyle} />
     <Box>
       <Heading {...typoStyle.title.earn}>{earnSection(title)}</Heading>
       <Text  {...typoStyle.text.earn}>{earnSection(text)}</Text>
@@ -13,8 +13,7 @@ const UserCard = ({ title, text , earnSection}) => (
   </HStack>
 )
 
-export const EarnSection = ({ data, earnSection }) => {
-  return (
+export const EarnSection = ({ data, earnSection }) => (
     <Box {...earnBoxStyle}>
       <Container {...earnContainerStyle}>
         <Heading {...typoStyle.subheadline.earn}> {earnSection('earnHeadLine')}</Heading>
@@ -25,5 +24,4 @@ export const EarnSection = ({ data, earnSection }) => {
       </Container>
     </Box>
   )
-}
 

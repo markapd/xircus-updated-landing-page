@@ -11,8 +11,7 @@ const ProductCard = ({title,img,text,products}) => (
     <Text {...typoStyle.text.product}>{products(text)} </Text>
   </Box>
 )
-export const Products = ({data, products}) => {
-  return (
+export const Products = ({data, products}) => (
     <Box>
       <Container {...productBoxStyle}>
         <Heading {...typoStyle.headline.product}>{ products('productHeadline') }</Heading>
@@ -22,5 +21,5 @@ export const Products = ({data, products}) => {
       </Container>
     </Box>
   )
-}
+
 

@@ -61,8 +61,7 @@ const DrawerExample = ({ header }) => {
   )
 }
 
-export const Header = ({header}) => {
-  return (
+export const Header = ({header}) => (
     <Box {...headerBoxStyle}>
       <Container {...headerContainerStyle}>
         <HStack>
@@ -80,5 +79,4 @@ export const Header = ({header}) => {
       </Container>
     </Box>
   )
-}
 

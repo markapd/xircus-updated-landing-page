@@ -31,7 +31,7 @@ const marketPrice = [
 ]
 
 export const IncomeSection = ({incomeSection}) => {
-  const [sliderValue, setSliderValue] = useState(50)
+  // const [sliderValue, setSliderValue] = useState(50)
   return (
     <Box {...incomeBoxStyle}>
       <Container {...incomeContainerStyle}>
@@ -43,7 +43,7 @@ export const IncomeSection = ({incomeSection}) => {
             </UnorderedList>
           </Box>
           <Spacer />
-          <Box {...incomeStackBoxStyled} p="20px">
+          <Box {...incomeStackBoxStyled} p="15px">
             <Box>
               <Heading {...typoStyle.subtitle.income}> {incomeSection('incomeTitle')} </Heading>
               <Text {...typoStyle.text.income}> {incomeSection('incomeSubText')}  </Text>
@@ -52,7 +52,7 @@ export const IncomeSection = ({incomeSection}) => {
             <Box>
               <Heading {...typoStyle.subtitle.income}> {incomeSection('subHeading')} </Heading>
               <Slider aria-label='slider-ex-6' onChange={(val) => setSliderValue(val)}>
-                <SliderTrack>
+                <SliderTrack >
                   <SliderFilledTrack />
                 </SliderTrack>
                 <SliderThumb />

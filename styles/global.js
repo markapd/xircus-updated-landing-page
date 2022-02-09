@@ -31,9 +31,9 @@ export const typoStyle = {
       fontSize: '30px'
     },
     income: {
-      size:'sm',
+      fontSize:{base:14,lg:15},
       color:'orange.500',
-      fontWeight:'bold'
+      fontWeight:''
     },
     multiple: {
       textAlign:'center',
@@ -59,7 +59,7 @@ export const typoStyle = {
       fontSize:'20px'
     },
     card: {
-      mt: '35px',
+      mt: '40px',
       fontSize:'18px'
     },
     income: {
@@ -69,7 +69,7 @@ export const typoStyle = {
   },
   subtitle:{
     income: {
-      fontSize:'14px',
+      fontSize:'15px',
       py:'20px'
     }
   },
@@ -87,19 +87,19 @@ export const typoStyle = {
       textAlign:'center'
     },
     nftControl:{
-      fontSize:'12px',
+      fontSize:'14px',
     },
     earn:{
       fontSize:'12px',
     },
     card: {
-      fontSize:'12px'
+      fontSize:'14px'
     },
     product:{
-      fontSize: '12px'
+      fontSize: '14px'
     },
     income: {
-      fontSize:'10px'
+      fontSize:'13px'
     },
     nft: {
       fontSize:'12px'
@@ -116,7 +116,7 @@ export const typoStyle = {
     fontSize: '12px'
     },
     income: {
-      fontSize:'12px'
+      fontSize:'13px'
     }
 },
   label:{},
@@ -218,34 +218,31 @@ export const heroAsSeenStyle = {
   flexDirection: { base:'column', lg:'row'},
   }
 export const heroGradientButton1 = {
-  color:'white',
+  as:'button',
+  p:'15px',
+  w:'190px',
   transition:'all 300ms ease',
   my:'10px',
   rounded:'full',
-  borderRadius:'6px',
   size:'lg',
   bgGradient:'linear(to-l, #8a2387, #e94057, #f27121)',
-  _focus: { 
-    boxShadow:'none'
-   },
-  _hover:{ bg: '#111', bgGradient: 'linear(to-l, #8a2387, #e94057, #f27121)' }
+  _hover:{ color:'black' }
 }
 export const heroGradientButton2 = {
-  color:'white',
+  as:'button',
+  p:'10px',
+  lineHeight:4,
+  w:'190px',
   transition:'all 300ms ease',
   my:'10px',
   rounded:'full',
-  borderRadius:'6px',
   size:'lg',
   bgGradient:'linear(to-l, #8a2387, #e94057, #f27121)',
-  _focus: { 
-    boxShadow:'none'
-   },
-  _hover:{ bg: '#111', bgGradient: 'linear(to-l, #8a2387, #e94057, #f27121)' }
+  _hover:{ color:'black' }
 }
 export const asSeenImageContainerStyle = {
   maxW:'container.lg',
-  mt:'100px'
+  mt:'90px'
 }
 export const asSeenImageStyle = {
   boxSize:'100px',
@@ -253,9 +250,9 @@ export const asSeenImageStyle = {
 }
 export const asSeenBoxImage= {
   w:{base:'auto',lg:'100%'},
+  fontWeight:'bold',
   py:{ base:'20px',lg:'auto' },
 }
-
 
 //--------- NFT CONTROL COMPONENTS ----------//  
 
@@ -276,15 +273,17 @@ export const nftBoxStyle = {
   justifyContent:'center',
 }
 export const parentBox = {
-  bgGradient: 'linear(to-t, #1A202C, #1A202C, #652B19)',
+  bgGradient: 'linear(to-t, gray.900, #1A202C, #652B19)',
   w:'100%',
   my:'20px',
   rounded: 20,
   position:'relative',
 }
 export const nftCardStack = {
-  mt:'100px',
+  mt:'120px',
+  spacing:{base:'auto',lg:30},
   textAlign:'center',
+  alignItems:'center',
   flexDirection:{base:'column', md:'row', lg:'row'}
 }
 export const nftCardImageStyle = {
@@ -308,11 +307,13 @@ export const productCardStyle = {
   p: '35px',
   w:'100%',
   rounded: '20px',
-  bg:'gray.900',
+  boxShadow:'0px -1px 1px 0px #4A5568',
+  bg:'#110d0d'
 }
 export const productCardImageStyle = {
   boxSize:'90px',
   objectFit:'cover'
+  
 }
 export const productsGridStyle = {
   templateColumns:{base:'repeat(1, 1fr)',md:'repeat(2, 1fr)',lg:'repeat(4, 1fr)'},
@@ -463,10 +464,10 @@ export const carouselCardStyle = {
   w:'100%',
   p:'60px 30px',
   rounded: '20px',
-  bg:'gray.900',
+  bg:'#110d0d'
 }
 export const carouselImageStyle = {
-   boxSize:'100px',
+  boxSize:'100px',
   objectFit:'cover'
 }
 export const carouselStyle = {

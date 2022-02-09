@@ -17,8 +17,8 @@ export const HeroSection = ({data, heroSection}) => {
             <GiPlayButton />
           </Button>
           <HStack {...heroButton}>
-            <Button {...typoStyle.text.hero} {...heroGradientButton1} > {heroSection('firstButton')} </Button>
-            <Button {...typoStyle.text.hero} {...heroGradientButton2} > {heroSection('secondButton')}</Button>
+            <Text  {...typoStyle.text.hero} {...heroGradientButton1} > {heroSection('firstButton')} </Text>
+            <Text {...typoStyle.text.hero} {...heroGradientButton2} > {heroSection('secondButton')}</Text>
           </HStack>
         </VStack>
       </Container>

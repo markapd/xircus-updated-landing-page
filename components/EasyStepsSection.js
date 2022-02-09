@@ -4,8 +4,7 @@ import { Box, Center,Heading,Tabs, TabList,Tab,TabPanels,TabPanel, Container,Ima
 //imports style
 import { easyStepsContainerStyle,easyStepsTabStyle,easyTabStyle,boxTabsStyle, easyImageStyle, easyBoxStyle, typoStyle } from '../styles/global'
 
-export const EasyStepsSection = ({data, easyStepsSection}) => {
-  return (
+export const EasyStepsSection = ({data, easyStepsSection}) => (
     <Box {...easyBoxStyle}>
       <Container {...easyStepsContainerStyle}>
         <Center>
@@ -22,5 +21,4 @@ export const EasyStepsSection = ({data, easyStepsSection}) => {
       </Container>
     </Box>
   )
-}
 

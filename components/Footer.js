@@ -8,8 +8,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 //import styles 
 import { footerBoxStyle, typoStyle,footerStackStyle, footerNavStyle,footerContainerStyle } from '../styles/global'
 
-export const Footer = ({data, footer}) => {
-  return (
+export const Footer = ({data, footer}) => (
     <Box {...footerBoxStyle}>
       <Container {...footerContainerStyle}>
         <HStack {...footerStackStyle}>
@@ -32,5 +31,4 @@ export const Footer = ({data, footer}) => {
       </Container>
     </Box>
   )
-}
 

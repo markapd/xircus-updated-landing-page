@@ -1,11 +1,11 @@
 
-import { Box } from '@chakra-ui/react'
 
 //Next import
 
 // Config Imports
 import { productsConfig, nftConfig, earnConfig, cardsConfig, carouselConfig, deployConfig, easyConfig, footerConfig, heroConfig, multipleConfig } from '../config/myConfig'
 //Import Style hehe
+import { Box } from '@chakra-ui/react'
 import { webBackgroundStyle } from '../styles/global'
 
 //Components

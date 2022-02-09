@@ -11,17 +11,13 @@ const GridCard = ({img, title, text, cards}) => (
   </Box>
 )
 
-export const Cards = ({data, cards}) => {
-  return (
+export const Cards = ({data, cards}) => (
     <Box {...cardBoxStyle}>
       <Container {...cardContainerStyle}>
         <Grid  {...cardGridStyle}>
-          { 
-            data.map((e,i)=> <GridCard key={i} cards={cards} {...e} />)
-          }
+          { data.map((e,i)=> <GridCard key={i} cards={cards} {...e} />) }
         </Grid>
       </Container>
     </Box>
   )
-}
 
